@@ -1,4 +1,4 @@
-package org.openmrs.module.bahmniemrapi;
+package org.bahmni.module.bahmnicommons;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;

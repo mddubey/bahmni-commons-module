@@ -13,7 +13,7 @@
     <description>
         Provides common Bahmni services
     </description>
-    <activator>org.openmrs.module.bahmniemrapi.Activator</activator>
+    <activator>org.bahmni.module.bahmnicommons.Activator</activator>
 
     <updateURL>https://example.com/modules/download/bahmnicore/update.rdf</updateURL>
     <!-- / Module Properties -->
@@ -23,6 +23,7 @@
     <!-- Required Modules -->
     <require_version>${openMRSRuntimeVersion}</require_version>
     <require_modules>
+        <require_module>org.openmrs.module.webservices.rest</require_module>
     </require_modules>
 
     <!-- / Required Modules -->
