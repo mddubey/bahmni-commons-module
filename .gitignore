@@ -1,19 +1,9 @@
-/.classpath
-/.settings
-/.project
-target
-/activemq-data
-/api/.classpath
-/api/.settings
-/api/.project
-/api/target
-/api/activemq-data
-/omod/.classpath
-/omod/.settings
-/omod/.project
-/omod/target
+**/.classpath
+**/.settings
+**/.project
+**/target
 
-/.idea
+**/.idea
 *.iml
 *.ipr
 *.iws
