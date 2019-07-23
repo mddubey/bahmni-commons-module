@@ -1,7 +1,7 @@
-package org.bahmni.module.bahmnicommonsapi.web.v1_0.controller;
+package org.bahmni.module.bahmnicommons.web.v1_0;
 
-
-import org.bahmni.module.bahmnicommonsapi.web.v1_0.BaseIntegrationTest;
+import org.bahmni.module.bahmnicommons.BaseIntegrationTest;
+import org.bahmni.module.bahmnicommons.web.v1_0.controller.BahmniVisitLocationController;
 import org.junit.Before;
 import org.junit.Test;
 import org.openmrs.module.bahmniemrapi.visitlocation.VisitLocationNotFoundException;

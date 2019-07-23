@@ -1,4 +1,4 @@
-package org.bahmni.module.bahmnicommonsapi.web.v1_0.controller;
+package org.bahmni.module.bahmnicommons.web.v1_0.controller;
 
 import org.openmrs.module.bahmniemrapi.visitlocation.BahmniVisitLocationService;
 import org.openmrs.module.webservices.rest.web.RestConstants;

@@ -1,4 +1,4 @@
-package org.bahmni.module.bahmnicommonsapi.web.v1_0;
+package org.bahmni.module.bahmnicommons;
 
 import org.bahmni.test.web.controller.BaseWebControllerTest;
 
