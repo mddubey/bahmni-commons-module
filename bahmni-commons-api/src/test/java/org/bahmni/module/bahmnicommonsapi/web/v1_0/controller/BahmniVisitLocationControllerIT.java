@@ -27,7 +27,7 @@ public class BahmniVisitLocationControllerIT extends BaseIntegrationTest {
 
     @Test
     public void shouldTraverseTillItGetsParentLocationIdWhichIsTaggedToVisitLocation() throws Exception {
-        String locationUuid= bahmniLocationController.getVisitLocationInfo("e36023e5-9fwb-4f20-866b-0ece24561525").get("uuid");
+        String locationUuid = bahmniLocationController.getVisitLocationInfo("e36023e5-9fwb-4f20-866b-0ece24561525").get("uuid");
         assertEquals("e36006e5-9fbb-4f20-866b-0ece24561525", locationUuid);
     }
 

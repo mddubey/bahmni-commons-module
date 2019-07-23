@@ -26,9 +26,9 @@ public class BahmniVisitLocationController extends BaseRestController {
 
     @RequestMapping(method = RequestMethod.GET, value = "/{loginLocationUuid}")
     @ResponseBody
-    public HashMap<String, String> getVisitLocationInfo(@PathVariable("loginLocationUuid") String locationUuid ) {
+    public HashMap<String, String> getVisitLocationInfo(@PathVariable("loginLocationUuid") String locationUuid) {
         HashMap<String, String> visitLocation = new HashMap<>();
-        visitLocation.put("uuid",bahmniVisitLocationService.getVisitLocationUuid(locationUuid));
+        visitLocation.put("uuid", bahmniVisitLocationService.getVisitLocationUuid(locationUuid));
         return visitLocation;
     }
 
