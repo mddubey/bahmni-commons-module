@@ -1,0 +1,87 @@
+`<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd">
+
+    <property name="now" value="now()"/>
+
+    <changeSet id="bahmniconfig-201505252028" author="Mihir">
+        <preConditions onFail="MARK_RAN">
+            <not>
+                <tableExists tableName="bahmni_config"/>
+            </not>
+        </preConditions>
+        <createTable tableName="bahmni_config">
+            <column autoIncrement="true" name="config_id" type="int">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column name="config_name" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="app_name" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="config" type="longtext">
+                <constraints nullable="false"/>
+            </column>
+            <column name="creator" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="date_created" type="DATETIME">
+                <constraints nullable="false"/>
+            </column>
+            <column name="changed_by" type="int"/>
+            <column name="date_changed" type="DATETIME"/>
+            <column name="uuid" type="char(38)"/>
+        </createTable>
+        <addForeignKeyConstraint constraintName="bahmni_config_creator_fk"
+                                 baseTableName="bahmni_config" baseColumnNames="creator"
+                                 referencedTableName="users" referencedColumnNames="user_id"/>
+        <addForeignKeyConstraint constraintName="bahmni_config_changed_by_fk"
+                                 baseTableName="bahmni_config" baseColumnNames="changed_by"
+                                 referencedTableName="users" referencedColumnNames="user_id"/>
+        <addUniqueConstraint columnNames="config_name, app_name"
+                             constraintName="bahmni_config_unique_app_config_name"
+                             tableName="bahmni_config"/>
+        <addUniqueConstraint columnNames="uuid"
+                             constraintName="bahmni_config_unique_uuid"
+                             tableName="bahmni_config"/>
+    </changeSet>
+
+    <changeSet id="bahmniconfig-201505252128" author="Mihir">
+        <preConditions onFail="MARK_RAN">
+            <not>
+                <tableExists tableName="bahmni_config_version"/>
+            </not>
+        </preConditions>
+        <createTable tableName="bahmni_config_version">
+            <column autoIncrement="true" name="config_version_id" type="int">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column name="config_uuid" type="char(38)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="config_diff" type="BLOB">
+                <constraints nullable="false"/>
+            </column>
+            <column name="date_created" type="DATETIME">
+                <constraints nullable="false"/>
+            </column>
+            <column name="version_name" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="uuid" type="char(38)"/>
+        </createTable>
+        <addForeignKeyConstraint constraintName="bahmni_config_uuid_fk"
+                                 baseTableName="bahmni_config_version" baseColumnNames="config_uuid"
+                                 referencedTableName="bahmni_config" referencedColumnNames="uuid"/>
+        <addUniqueConstraint columnNames="version_name"
+                             constraintName="bahmni_config_unique_version_name"
+                             tableName="bahmni_config_version"/>
+        <addUniqueConstraint columnNames="uuid"
+                             constraintName="bahmni_config_version_unique_uuid"
+                             tableName="bahmni_config_version"/>
+    </changeSet>
+</databaseChangeLog>

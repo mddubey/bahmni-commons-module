@@ -28,4 +28,7 @@
 
     <!-- / Required Modules -->
 
+    <mappingFiles>
+        BahmniConfig.hbm.xml
+    </mappingFiles>
 </module>
