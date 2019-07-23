@@ -14,6 +14,7 @@
         <module>bahmni-commons-api</module>
         <module>bahmni-commons-omod</module>
         <module>bahmni-test-commons</module>
+        <module>bahmni-commons-admin</module>
     </modules>
 
     <properties>
