@@ -25,7 +25,7 @@ import java.util.List;
 
 @Controller
 @RequestMapping(value = "/rest/" + RestConstants.VERSION_1 + "/bahmnicore/config")
-public class BahmniConfigController extends BaseRestController {
+public class BahmniCommonsConfigController extends BaseRestController {
 
     @Autowired
     private BahmniPatientService bahmniPatientService;
